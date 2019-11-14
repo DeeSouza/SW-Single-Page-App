@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { FaRegEye, FaCloudsmith, FaFillDrip } from 'react-icons/fa';
 
 import { Container, ImageCover } from './styles';
 
@@ -13,12 +14,15 @@ export default function People({ item }) {
 			<div className="main">{item.name}</div>
 			<div className="footer">
 				<div>
+					<FaCloudsmith size={28} />
 					<strong>{item.hair_color}</strong>
 				</div>
 				<div>
+					<FaFillDrip size={28} />
 					<strong>{item.skin_color}</strong>
 				</div>
 				<div>
+					<FaRegEye size={28} />
 					<strong>{item.eye_color}</strong>
 				</div>
 			</div>

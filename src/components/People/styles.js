@@ -45,9 +45,8 @@ export const Container = styled.div`
 			justify-content: space-around;
 
 			div {
-				strong {
-					display: block;
-				}
+				display: flex;
+				flex-direction: row;
 			}
 		}
 	}
