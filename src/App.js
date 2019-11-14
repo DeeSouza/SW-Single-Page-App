@@ -1,7 +1,16 @@
 import React from 'react';
+import GlobalStyle from './styles/global';
+import Routes from './routes';
+
+import Container from './components/Container';
 
 function App() {
-  return <div className="App">Oi</div>;
+	return (
+		<Container>
+			<GlobalStyle />
+			<Routes />
+		</Container>
+	);
 }
 
 export default App;
