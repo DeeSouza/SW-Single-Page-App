@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { cover } from 'polished';
 
 export const Container = styled.div`
 	background-color: #fff;
