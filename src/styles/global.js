@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import settings from './variables';
 
 export default createGlobalStyle`
 	@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap');
@@ -10,7 +11,7 @@ export default createGlobalStyle`
 	}
 
 	body{
-		background: #F7F7F7;
+		background: ${settings.backgroundColor};
 		-webkit-font-smoothing: antialiased;
 		font-family: "Roboto";
 	}
