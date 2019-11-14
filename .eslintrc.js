@@ -30,8 +30,9 @@ module.exports = {
       "global-require": "off",
       "react-native/no-raw-text": "off",
       "no-param-reassign": "off",
-      "no-underscore-dangle": "off",
-      camelcase: "off",
+	  "no-underscore-dangle": "off",
+	  "no-nested-ternary": "off",
+      "camelcase": "off",
       "no-console": ["error", { allow: ["tron"] }],
   },
 };
