@@ -7,8 +7,17 @@ export const WrapperPeoples = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
+	padding-bottom: 30px;
 `;
 
-export const Peoples = styled.div``;
+export const Peoples = styled.div`
+	width: 90%;
+	max-width: 1024px;
+	display: grid;
+	grid-template-columns: 100%;
 
-export const People = styled.div``;
+	@media (min-width: 768px) {
+		grid-template-columns: 1fr 1fr;
+		grid-column-gap: 20px;
+	}
+`;
