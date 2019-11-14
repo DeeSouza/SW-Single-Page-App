@@ -20,11 +20,11 @@ export default function Home() {
 			setLoading(true);
 
 			try {
-				const { data } = await SWApi.get('pedople');
+				const { data } = await SWApi.get('people');
 
 				setPeoples(data.results);
 				setTotalPeoples(data.count);
-			} catch (error) {
+			} catch (e) {
 				toast.error(
 					'Whoops! Aconteceu algo que não esperávamos. Volte novamente mais tarde.'
 				);
