@@ -12,7 +12,6 @@ export const Container = styled.div`
 	padding: 0px 15px;
 	justify-content: space-between;
 	background-color: ${settings.backgroundColor};
-	box-shadow: #626262 0px 0px 20px -10px;
 	z-index: 1;
 
 	img {

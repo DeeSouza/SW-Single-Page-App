@@ -1,60 +1,92 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+	min-width: 250px;
 	background-color: #fff;
-	height: 300px;
-	margin-bottom: 15px;
-	box-shadow: rgba(205, 205, 205, 0.4) 0px 0px 4px 3px;
+	margin-right: 15px;
+	box-shadow: rgba(205, 205, 205, 0.4) 3px 3px 4px 3px;
 	display: flex;
 	flex-direction: column;
+	border-radius: 5px;
 
 	&:last-child {
 		margin-bottom: 0;
 	}
 
 	div {
-		&.header {
-			flex-grow: 3;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-
-			img {
-				border-radius: 50%;
-				border-top-left-radius: 5px;
-				border-top-right-radius: 5px;
-			}
-		}
-
 		&.main {
-			flex-grow: 2;
 			display: flex;
-			align-items: center;
 			background-color: #ffffff;
 			font-weight: bolder;
-			padding: 0px 15px;
-		}
+			padding: 12px 15px;
+			justify-content: flex-start;
+			flex-direction: column;
+			position: relative;
 
-		&.footer {
-			height: 40px;
-			color: #000;
-			flex-grow: 1;
-			padding: 0px 15px;
-			display: flex;
-			align-items: center;
-			justify-content: space-around;
+			> strong{
+				font-size: 15px;
+				font-weight: 500;
+			}
 
-			div {
+			.footer {
+				color: #000;
 				display: flex;
-				flex-direction: row;
+				align-items: center;
+				justify-content: space-between;
+				margin-top: 10px;
+				flex-direction: column;
+
+				div {
+					display: flex;
+					flex-direction: column;
+					width: 100%;
+					margin-top: 10px;
+
+					strong {
+						color: #5f5f5f;
+						font-size: 15px;
+					}
+
+					span {
+						display: inline-block;
+						font-weight: 400;
+						font-size: 13px;
+					}
+				}
 			}
 		}
 	}
 `;
 
 export const ImageCover = styled.div`
-	height: 200px;
+	height: 150px;
 	background-size: cover;
 	background-image: url(${props => props.image});
 	overflow: hidden;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+
+	img {
+		border-top-left-radius: 5px;
+		border-top-right-radius: 5px;
+	}
+`;
+
+export const DetailPeople = styled.div`
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+	background-color: #27ace8;
+    box-shadow: rgba(39, 172, 232, 0.6901960784313725) 0px 0px 21px 1px;
+	position: absolute;
+	right: 25px;
+	top: -25px;
+
+	a {
+		height: 100%;
+	    position: relative;
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	}
 `;

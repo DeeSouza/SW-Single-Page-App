@@ -1,21 +1,19 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-	background-color: #fff;
 	border-radius: 50%;
-	width: 50px;
-	height: 50px;
-	padding: 10px;
+	width: 35px;
+	height: 35px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
 	border: none;
+	cursor: pointer;
 
 	.lightsaber {
 		width: 75%;
 		height: 3px;
-		background-color: #212b38;
 		position: relative;
 		display: block;
 
@@ -28,28 +26,31 @@ export const Container = styled.div`
 			width: 25%;
 		}
 
-		&:first-child {
+		&.red {
 			position: relative;
 			top: -4px;
 			align-self: flex-start;
+			background-color: red;
 
 			&:before {
 				right: -30%;
 			}
 		}
 
-		&:nth-child(2) {
+		&.green {
 			align-self: flex-end;
+			background-color: green;
 
 			&:before {
 				left: -30%;
 			}
 		}
 
-		&:last-child {
+		&.blue {
 			position: relative;
 			top: 4px;
 			align-self: flex-start;
+			background-color: blue;
 
 			&:before {
 				right: -30%;

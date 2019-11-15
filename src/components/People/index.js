@@ -1,31 +1,42 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { FaRegEye, FaCloudsmith, FaFillDrip } from 'react-icons/fa';
+import { FaJedi } from 'react-icons/fa';
 
-import { Container, ImageCover } from './styles';
+import { Container, ImageCover, DetailPeople } from './styles';
 
 export default function People({ item }) {
 	return (
 		<Container>
 			<ImageCover
-				image={`https://picsum.photos/300/200?grayscale?random=${item.created}`}
+				image={`https://picsum.photos/300/150?grayscale&random=${item.created}`}
 			/>
 
-			<div className="main">{item.name}</div>
-			<div className="footer">
-				<div>
-					<FaCloudsmith size={28} />
-					<strong>{item.hair_color}</strong>
-				</div>
-				<div>
-					<FaFillDrip size={28} />
-					<strong>{item.skin_color}</strong>
-				</div>
-				<div>
-					<FaRegEye size={28} />
-					<strong>{item.eye_color}</strong>
+			<div className="main">
+				<DetailPeople>
+					<Link to="/">
+						<FaJedi size={26} color="#FFF" />
+					</Link>
+				</DetailPeople>
+
+				<strong>{item.name}</strong>
+
+				<div className="footer">
+					<div>
+						<strong>Hair Color</strong>
+						<span>{item.hair_color}</span>
+					</div>
+					<div>
+						<strong>Skin Color</strong>
+						<span>{item.skin_color}</span>
+					</div>
+					<div>
+						<strong>Eyes Color</strong>
+						<span>{item.eye_color}</span>
+					</div>
 				</div>
 			</div>
+			
 		</Container>
 	);
 }

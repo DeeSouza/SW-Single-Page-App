@@ -1,23 +1,24 @@
 import styled from 'styled-components';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+	h2 {
+		margin: 0;
+		padding: 0;
+		margin-bottom: 0px;
+		padding: 75px 15px 0px;
+	}
+`;
 
 export const WrapperPeoples = styled.div`
-	padding-top: 100px;
+	padding: 5px 15px 30px 15px;
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
-	padding-bottom: 30px;
 `;
 
 export const Peoples = styled.div`
-	width: 90%;
-	max-width: 1024px;
-	display: grid;
-	grid-template-columns: 100%;
-
-	@media (min-width: 768px) {
-		grid-template-columns: 1fr 1fr;
-		grid-column-gap: 20px;
-	}
+	width: 100%;
+	display: flex;
+	overflow: auto;
+	padding: 10px 0px;
 `;

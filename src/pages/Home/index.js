@@ -42,6 +42,8 @@ export default function Home() {
 		<Container>
 			<Header />
 
+			<h2>Personagens</h2>
+			
 			<WrapperPeoples>
 				{loading ? (
 					<Loading />
