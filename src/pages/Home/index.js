@@ -20,14 +20,14 @@ export default function Home() {
 
 	useEffect(() => {
 		(async function getSWPersons() {
-			if(!next) setLoading(true);
+			if (!next) setLoading(true);
 			else setLoadingMore(true);
 
 			try {
 				const { data } = await SWApi.get('people', {
 					params: {
-						page
-					}
+						page,
+					},
 				});
 
 				setPeoples(peoples => [...peoples, ...data.results]);
@@ -46,7 +46,7 @@ export default function Home() {
 	}, [page]);
 
 	function handleMorePeople() {
-		if(next) {
+		if (next) {
 			setPage(page + 1);
 		}
 	}
@@ -56,7 +56,7 @@ export default function Home() {
 			<Header />
 
 			<h2>Personagens</h2>
-			
+
 			<WrapperPeoples>
 				{loading ? (
 					<Loading />
@@ -68,13 +68,21 @@ export default function Home() {
 							<People key={people.created} item={people} />
 						))}
 
-						{next && 
+						{next && (
 							<LoadMore>
 								<button onClick={handleMorePeople}>
-									{loadingMore ? <FaSpinner className="loading" color="#FFFFFF" size={16} /> : <FaPlus color="#FFFFFF" size={16} />}
+									{loadingMore ? (
+										<FaSpinner
+											className="loading"
+											color="#FFFFFF"
+											size={16}
+										/>
+									) : (
+										<FaPlus color="#FFFFFF" size={16} />
+									)}
 								</button>
-							</LoadMore> 
-						}
+							</LoadMore>
+						)}
 					</Peoples>
 				)}
 			</WrapperPeoples>

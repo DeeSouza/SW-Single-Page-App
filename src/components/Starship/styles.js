@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-	min-width: 250px;
+	width: 100%;
 	background-color: #fff;
-	margin-right: 15px;
 	box-shadow: rgba(205, 205, 205, 0.4) 3px 3px 4px 3px;
 	display: flex;
 	flex-direction: column;
 	border-radius: 5px;
+	margin-bottom: 10px;
 
 	&:last-child {
 		margin-bottom: 0;
@@ -43,13 +43,13 @@ export const Container = styled.div`
 
 					strong {
 						color: #5f5f5f;
-						font-size: 13px;
+						font-size: 15px;
 					}
 
 					span {
 						display: inline-block;
 						font-weight: 400;
-						font-size: 12px;
+						font-size: 13px;
 					}
 				}
 			}
@@ -60,27 +60,20 @@ export const Container = styled.div`
 export const ImageCover = styled.div`
 	height: 150px;
 	background-size: cover;
-	background-image: url(${props => props.image});
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.52), rgb(80, 80, 80) 100%), url(${props => props.image});
 	overflow: hidden;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-`;
-
-export const DetailPeople = styled.div`
-	border-radius: 50%;
-	width: 50px;
-	height: 50px;
-	background-color: #27ace8;
-    box-shadow: rgba(39, 172, 232, 0.6901960784313725) 0px 0px 21px 1px;
-	position: absolute;
-	right: 25px;
-	top: -25px;
-
-	a {
-		height: 100%;
-	    position: relative;
-	    display: flex;
-	    justify-content: center;
-	    align-items: center;
+	border-radius: 5px;
+	position: relative;
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-end;
+	flex-direction: column;
+	color: #FFF;
+	
+	.info {
+		display: flex;
+		flex-direction: column;
+		padding: 20px;
+		text-align: right;
 	}
 `;

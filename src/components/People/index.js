@@ -14,7 +14,12 @@ export default function People({ item }) {
 
 			<div className="main">
 				<DetailPeople>
-					<Link to="/">
+					<Link to={{
+						pathname: "/people",
+						state: {
+							people: item
+						}
+					}}>
 						<FaArrowRight size={26} color="#FFF" />
 					</Link>
 				</DetailPeople>
@@ -28,7 +33,6 @@ export default function People({ item }) {
 					</div>
 				</div>
 			</div>
-			
 		</Container>
 	);
 }
