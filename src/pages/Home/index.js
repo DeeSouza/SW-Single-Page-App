@@ -19,7 +19,7 @@ export default function Home() {
 	const [next, setNext] = useState('');
 
 	useEffect(() => {
-		const getSWPersons = async () => {
+		(async function getSWPersons() {
 			if(!next) setLoading(true);
 			else setLoadingMore(true);
 
@@ -42,9 +42,7 @@ export default function Home() {
 				setLoading(false);
 				setLoadingMore(false);
 			}
-		};
-
-		getSWPersons();
+		})();
 	}, [page]);
 
 	function handleMorePeople() {
