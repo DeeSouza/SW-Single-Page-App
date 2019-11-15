@@ -1,13 +1,19 @@
 import styled from 'styled-components';
+import { darken } from 'polished';
+import settings from '../../styles/variables';
 
 export const Container = styled.div`
 	min-width: 250px;
-	background-color: #fff;
+	background-color: ${settings.backgroundColorCard};
 	margin-right: 15px;
 	box-shadow: rgba(205, 205, 205, 0.4) 3px 3px 4px 3px;
 	display: flex;
 	flex-direction: column;
 	border-radius: 5px;
+
+	@media screen and (min-width: 1024px) {
+		min-width: 350px;
+	}
 
 	&:last-child {
 		margin-bottom: 0;
@@ -16,7 +22,6 @@ export const Container = styled.div`
 	div {
 		&.main {
 			display: flex;
-			background-color: #ffffff;
 			font-weight: bolder;
 			padding: 12px 15px;
 			justify-content: flex-start;
@@ -59,22 +64,35 @@ export const Container = styled.div`
 
 export const ImageCover = styled.div`
 	height: 150px;
-	background-size: cover;
+	background-size: 100% 100%;
+	background-position: center center;
+	background-repeat: no-repeat;
 	background-image: url(${props => props.image});
 	overflow: hidden;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
+	transition: all 0.25s ease-out;
+
+	&:hover {
+		background-size: 110% 110%;
+	}
 `;
 
-export const DetailPeople = styled.div`
+export const GoDetail = styled.div`
 	border-radius: 50%;
 	width: 50px;
 	height: 50px;
-	background-color: #27ace8;
-	box-shadow: rgba(39, 172, 232, 0.6901960784313725) 0px 0px 21px 1px;
+	background-color: ${settings.buttonDetailCard};
+	box-shadow: ${settings.buttonDetailCard} 0px 0px 21px 1px;
 	position: absolute;
 	right: 25px;
 	top: -25px;
+	transition: all 0.25s ease-out;
+
+	&:hover {
+		background-color: ${darken(0.1, settings.buttonDetailCard)};
+		box-shadow: ${darken(0.2, settings.buttonDetailCard)} 0px 0px 21px 1px;
+	}
 
 	a {
 		height: 100%;

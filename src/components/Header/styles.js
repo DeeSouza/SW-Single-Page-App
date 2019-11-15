@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import settings from '../../styles/variables';
 
 export const Container = styled.div`
 	height: 60px;

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import settings from '../../styles/variables';
 
 export const Container = styled.div`
 	border-radius: 50%;
@@ -33,7 +34,7 @@ export const Container = styled.div`
 
 			&:before {
 				right: -50%;
-				background-color: #ff2727;
+				background-color: ${settings.lightsaber.red};
 			}
 		}
 
@@ -43,7 +44,7 @@ export const Container = styled.div`
 
 			&:before {
 				left: -50%;
-				background-color: #3ca900;
+				background-color: ${settings.lightsaber.green};
 			}
 		}
 
@@ -55,7 +56,7 @@ export const Container = styled.div`
 
 			&:before {
 				right: -50%;
-				background-color: #006fff;
+				background-color: ${settings.lightsaber.blue};
 			}
 		}
 	}

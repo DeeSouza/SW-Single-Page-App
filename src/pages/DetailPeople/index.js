@@ -4,25 +4,39 @@ import axios from 'axios';
 
 import HeaderDetail from '../../components/HeaderDetail';
 import Starship from '../../components/Starship';
+import Loading from '../../components/Loading';
+import Error from '../../components/Error';
 
-import { Container, Details, Starships } from './styles';
+import { Container, Details, Starships, WrapperStarships } from './styles';
 import SWApi from '../../services/api';
 
 export default function DetailPeople({ location }) {
 	const { people } = location.state;
 	const [starships, setStarships] = useState([]);
+	const [loading, setLoading] = useState(false);
+	const [error, setError] = useState(false);
 	const all_starships = [];
 
 	useEffect(() => {
 		(async function getSWStarshipPeople() {
-			const requests = people.starships.map(p => {
-				return SWApi.get(p.replace('https://swapi.co/api/', ''));
-			});
+			try {
+				setLoading(true);
 
-			const responses = await axios.all(requests);
-			responses.map(response => all_starships.push(response.data));
+				const requests = people.starships.map(p => {
+					return SWApi.get(p.replace('https://swapi.co/api/', ''));
+				});
 
-			setStarships([...starships, ...all_starships]);
+				const responses = await axios.all(requests);
+				responses.map(response => all_starships.push(response.data));
+
+				setStarships([...starships, ...all_starships]);
+				setLoading(false);
+			} catch (e) {
+				setLoading(false);
+				setError(true);
+			} finally {
+				setLoading(false);
+			}
 		})();
 	}, []);
 
@@ -35,12 +49,21 @@ export default function DetailPeople({ location }) {
 				<h3>{people.birth_year}</h3>
 			</Details>
 
-			<Starships>
+			<WrapperStarships>
 				<h2>Starships</h2>
-				{starships.map(ship => (
-					<Starship key={ship.created} item={ship} />
-				))}
-			</Starships>
+
+				{loading ? (
+					<Loading />
+				) : error ? (
+					<Error />
+				) : (
+					<Starships>
+						{starships.map(ship => (
+							<Starship key={ship.created} item={ship} />
+						))}
+					</Starships>
+				)}
+			</WrapperStarships>
 		</Container>
 	);
 }

@@ -21,7 +21,7 @@ export default function Starship({ item }) {
 Starship.propTypes = {
 	item: PropTypes.shape({
 		name: PropTypes.string,
-		mode: PropTypes.string,
+		model: PropTypes.string,
 		created: PropTypes.string,
 	}).isRequired,
 };

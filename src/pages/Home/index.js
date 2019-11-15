@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { FaPlus, FaSpinner } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 
-import Header from '../../components/Header';
 import People from '../../components/People';
 import Loading from '../../components/Loading';
 import Error from '../../components/Error';
@@ -53,8 +52,6 @@ export default function Home() {
 
 	return (
 		<Container>
-			<Header />
-
 			<h2>Personagens</h2>
 
 			<WrapperPeoples>

@@ -17,11 +17,28 @@ export const Details = styled.div`
 	}
 `;
 
-export const Starships = styled.div`
+export const WrapperStarships = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 	padding: 20px;
 
 	h2 {
-		font-size: 18px;
-		margin-bottom: 10px;
+		margin-right: auto;
+		padding: 0;
+		margin-bottom: 0px;
+		color: #717171;
+	}
+`;
+
+export const Starships = styled.div`
+	width: 100%;
+	margin-top: 10px;
+
+	@media screen and (min-width: 860px) {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 20px;
 	}
 `;

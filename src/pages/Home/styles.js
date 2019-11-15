@@ -31,9 +31,9 @@ export const LoadMore = styled.div`
 	justify-content: center;
 
 	button {
-		background-color: none;
+		background-color: transparent;
 		border: none;
-		cursor: none;
+		cursor: pointer;
 		border-radius: 50%;
 		width: 30px;
 		height: 30px;

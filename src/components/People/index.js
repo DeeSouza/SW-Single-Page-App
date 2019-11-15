@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { FaArrowRight } from 'react-icons/fa';
 
-import { Container, ImageCover, DetailPeople } from './styles';
+import { Container, ImageCover, GoDetail } from './styles';
 
 export default function People({ item }) {
 	return (
@@ -13,7 +13,7 @@ export default function People({ item }) {
 			/>
 
 			<div className="main">
-				<DetailPeople>
+				<GoDetail>
 					<Link
 						to={{
 							pathname: '/people',
@@ -24,7 +24,7 @@ export default function People({ item }) {
 					>
 						<FaArrowRight size={26} color="#FFF" />
 					</Link>
-				</DetailPeople>
+				</GoDetail>
 
 				<strong>{item.name}</strong>
 
