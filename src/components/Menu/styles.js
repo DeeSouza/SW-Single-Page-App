@@ -12,8 +12,8 @@ export const Container = styled.div`
 	cursor: pointer;
 
 	.lightsaber {
-		width: 75%;
-		height: 3px;
+		width: 65%;
+		height: 4px;
 		position: relative;
 		display: block;
 
@@ -21,28 +21,29 @@ export const Container = styled.div`
 			content: '';
 			position: absolute;
 			top: 0;
-			height: 3px;
-			background-color: #212b38;
-			width: 25%;
+			height: 4px;
+			width: 40%;
 		}
 
 		&.red {
 			position: relative;
 			top: -4px;
 			align-self: flex-start;
-			background-color: red;
+			background-color: #000;
 
 			&:before {
-				right: -30%;
+				right: -50%;
+				background-color: #ff2727;
 			}
 		}
 
 		&.green {
 			align-self: flex-end;
-			background-color: green;
+			background-color: #000;
 
 			&:before {
-				left: -30%;
+				left: -50%;
+				background-color: #3ca900;
 			}
 		}
 
@@ -50,10 +51,11 @@ export const Container = styled.div`
 			position: relative;
 			top: 4px;
 			align-self: flex-start;
-			background-color: blue;
+			background-color: #000;
 
 			&:before {
-				right: -30%;
+				right: -50%;
+				background-color: #006fff;
 			}
 		}
 	}

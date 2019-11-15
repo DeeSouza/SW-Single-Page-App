@@ -5,13 +5,13 @@ export const Container = styled.div`
 		margin: 0;
 		padding: 0;
 		margin-bottom: 0px;
-		padding: 75px 15px 0px;
+		padding: 20px 15px 0px;
 		color: #717171;
 	}
 `;
 
 export const WrapperPeoples = styled.div`
-	padding: 5px 0px 0px 15px;
+	padding: 20px 0px 0px 15px;
 	margin-right: 15px;
 	display: flex;
 	justify-content: center;
@@ -22,7 +22,7 @@ export const Peoples = styled.div`
 	width: 100%;
 	display: flex;
 	overflow: auto;
-	padding: 10px 0px;
+	padding: 0px 0px 10px;
 `;
 
 export const LoadMore = styled.div`

@@ -14,12 +14,14 @@ export default function People({ item }) {
 
 			<div className="main">
 				<DetailPeople>
-					<Link to={{
-						pathname: "/people",
-						state: {
-							people: item
-						}
-					}}>
+					<Link
+						to={{
+							pathname: '/people',
+							state: {
+								people: item,
+							},
+						}}
+					>
 						<FaArrowRight size={26} color="#FFF" />
 					</Link>
 				</DetailPeople>
@@ -44,5 +46,6 @@ People.propTypes = {
 		skin_color: PropTypes.string,
 		eye_color: PropTypes.string,
 		created: PropTypes.string,
+		birth_year: PropTypes.string,
 	}).isRequired,
 };

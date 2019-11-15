@@ -30,7 +30,7 @@ export default function Home() {
 					},
 				});
 
-				setPeoples(peoples => [...peoples, ...data.results]);
+				setPeoples([...peoples, ...data.results]);
 				setNext(data.next);
 			} catch (e) {
 				toast.error(
@@ -70,7 +70,10 @@ export default function Home() {
 
 						{next && (
 							<LoadMore>
-								<button onClick={handleMorePeople}>
+								<button
+									type="button"
+									onClick={handleMorePeople}
+								>
 									{loadingMore ? (
 										<FaSpinner
 											className="loading"

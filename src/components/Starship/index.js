@@ -15,5 +15,13 @@ export default function Starship({ item }) {
 				</div>
 			</ImageCover>
 		</Container>
-	)
+	);
 }
+
+Starship.propTypes = {
+	item: PropTypes.shape({
+		name: PropTypes.string,
+		mode: PropTypes.string,
+		created: PropTypes.string,
+	}).isRequired,
+};

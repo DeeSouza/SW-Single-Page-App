@@ -23,7 +23,7 @@ export const Container = styled.div`
 			flex-direction: column;
 			position: relative;
 
-			> strong{
+			> strong {
 				font-size: 15px;
 				font-weight: 500;
 			}
@@ -71,16 +71,16 @@ export const DetailPeople = styled.div`
 	width: 50px;
 	height: 50px;
 	background-color: #27ace8;
-    box-shadow: rgba(39, 172, 232, 0.6901960784313725) 0px 0px 21px 1px;
+	box-shadow: rgba(39, 172, 232, 0.6901960784313725) 0px 0px 21px 1px;
 	position: absolute;
 	right: 25px;
 	top: -25px;
 
 	a {
 		height: 100%;
-	    position: relative;
-	    display: flex;
-	    justify-content: center;
-	    align-items: center;
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 `;
