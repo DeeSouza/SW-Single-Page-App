@@ -17,7 +17,7 @@ module.exports = {
       ecmaVersion: 2018,
       sourceType: "module"
   },
-  plugins: ["react", "jsx-a11y", "import", "prettier"],
+  plugins: ["react", "jsx-a11y", "import", "prettier", "react-hooks"],
   rules: {
       "prettier/prettier": "error",
       "react/jsx-filename-extension": [
@@ -30,9 +30,11 @@ module.exports = {
       "global-require": "off",
       "react-native/no-raw-text": "off",
       "no-param-reassign": "off",
-	  "no-underscore-dangle": "off",
-	  "no-nested-ternary": "off",
+	    "no-underscore-dangle": "off",
+	    "no-nested-ternary": "off",
       "camelcase": "off",
       "no-console": ["error", { allow: ["tron"] }],
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'warn',
   },
 };
