@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { FaJedi } from 'react-icons/fa';
+import { FaArrowRight } from 'react-icons/fa';
 
 import { Container, ImageCover, DetailPeople } from './styles';
 
@@ -15,7 +15,7 @@ export default function People({ item }) {
 			<div className="main">
 				<DetailPeople>
 					<Link to="/">
-						<FaJedi size={26} color="#FFF" />
+						<FaArrowRight size={26} color="#FFF" />
 					</Link>
 				</DetailPeople>
 
@@ -23,16 +23,8 @@ export default function People({ item }) {
 
 				<div className="footer">
 					<div>
-						<strong>Hair Color</strong>
-						<span>{item.hair_color}</span>
-					</div>
-					<div>
-						<strong>Skin Color</strong>
-						<span>{item.skin_color}</span>
-					</div>
-					<div>
-						<strong>Eyes Color</strong>
-						<span>{item.eye_color}</span>
+						<strong>Birth Year</strong>
+						<span>{item.birth_year}</span>
 					</div>
 				</div>
 			</div>
