@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import HeaderDetail from '../../components/HeaderDetail';
 import Starship from '../../components/Starship';
+import DetailStarship from '../../components/DetailStarship';
 import LineData from '../../components/LineData';
 import Loading from '../../components/Loading';
 import Error from '../../components/Error';
@@ -15,8 +16,10 @@ import nothing from '../../assets/c3po-star-wars.svg';
 export default function DetailPeople({ location }) {
 	const { people } = location.state;
 	const [starships, setStarships] = useState([]);
+	const [starship, setStarship] = useState([]);
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(false);
+	const [show, setShow] = useState(false);
 	const all_starships = [];
 
 	useEffect(() => {
@@ -42,9 +45,15 @@ export default function DetailPeople({ location }) {
 		})();
 	}, []);
 
+	function handleDetailStarship(ship) {
+		setShow(true);
+		setStarship(ship);
+	}
+
 	return (
 		<Container>
 			<HeaderDetail />
+			<DetailStarship show={show} starship={starship} />
 
 			<Details>
 				<h1>{people.name}</h1>
@@ -93,7 +102,11 @@ export default function DetailPeople({ location }) {
 					<Starships>
 						{starships.length > 0 &&
 							starships.map(ship => (
-								<Starship key={ship.created} item={ship} />
+								<Starship
+									key={ship.created}
+									item={ship}
+									onClick={() => handleDetailStarship(ship)}
+								/>
 							))}
 					</Starships>
 				)}

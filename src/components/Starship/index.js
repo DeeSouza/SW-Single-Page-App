@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { FaPlaceOfWorship } from 'react-icons/fa';
 import { Container, ImageCover } from './styles';
 
-export default function Starship({ item }) {
+export default function Starship({ item, onClick }) {
 	return (
 		<Container>
 			<ImageCover
@@ -18,7 +18,7 @@ export default function Starship({ item }) {
 					<small>{item.model}</small>
 				</div>
 
-				<button type="button" className="more-info">
+				<button type="button" className="more-info" onClick={onClick}>
 					More Details
 				</button>
 			</ImageCover>
@@ -32,4 +32,5 @@ Starship.propTypes = {
 		model: PropTypes.string,
 		created: PropTypes.string,
 	}).isRequired,
+	onClick: PropTypes.func.isRequired,
 };
