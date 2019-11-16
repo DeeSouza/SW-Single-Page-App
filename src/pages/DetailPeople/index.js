@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import HeaderDetail from '../../components/HeaderDetail';
 import Starship from '../../components/Starship';
+import LineData from '../../components/LineData';
 import Loading from '../../components/Loading';
 import Error from '../../components/Error';
 
@@ -47,6 +48,37 @@ export default function DetailPeople({ location }) {
 			<Details>
 				<h1>{people.name}</h1>
 				<h3>{people.birth_year}</h3>
+
+				<div className="details">
+					<div>
+						<strong>Hair Color</strong>
+						<small>{people.hair_color}</small>
+					</div>
+					<div>
+						<strong>Skin Color</strong>
+						<small>{people.skin_color}</small>
+					</div>
+					<div>
+						<strong>Eyes Color</strong>
+						<small>{people.eye_color}</small>
+					</div>
+				</div>
+
+				<div className="other-details">
+					{people.height && (
+						<LineData item={people.height}>
+							<strong>Height</strong>
+							<small>{people.height}</small>
+						</LineData>
+					)}
+
+					{people.mass && (
+						<LineData item={people.mass}>
+							<strong>Mass</strong>
+							<small>{people.mass}</small>
+						</LineData>
+					)}
+				</div>
 			</Details>
 
 			<WrapperStarships>
@@ -74,6 +106,11 @@ DetailPeople.propTypes = {
 			people: PropTypes.shape({
 				name: PropTypes.string,
 				birth_year: PropTypes.string,
+				hair_color: PropTypes.string,
+				skin_color: PropTypes.string,
+				eye_color: PropTypes.string,
+				mass: PropTypes.string,
+				height: PropTypes.string,
 				starships: PropTypes.array,
 			}),
 		}),

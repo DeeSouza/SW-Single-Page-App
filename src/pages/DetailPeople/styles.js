@@ -16,6 +16,30 @@ export const Details = styled.div`
 		margin-top: 5px;
 	}
 
+	.details {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		margin-top: 20px;
+		max-width: 600px;
+
+		div {
+			display: flex;
+			flex-direction: column;
+
+			strong {
+				font-size: 14px;
+				color: #009688;
+			}
+
+			small {
+				font-size: 12px;
+				font-weight: lighter;
+			}
+		}
+	}
+
 	@media screen and (min-width: 768px) {
 		h1 {
 			font-size: 22px;
@@ -23,6 +47,18 @@ export const Details = styled.div`
 
 		h3 {
 			font-size: 18px;
+		}
+
+		.details {
+			div {
+				strong {
+					font-size: 18px;
+				}
+
+				small {
+					font-size: 15px;
+				}
+			}
 		}
 	}
 `;
