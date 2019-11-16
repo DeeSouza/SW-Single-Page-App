@@ -33,7 +33,7 @@ export default function Home() {
 				setNext(data.next);
 			} catch (e) {
 				toast.error(
-					'Whoops! Aconteceu algo que não esperávamos. Volte novamente mais tarde.'
+					'😓😓😓 Whoops! Aconteceu algo que não esperávamos. Volte novamente mais tarde.'
 				);
 
 				setError(true);

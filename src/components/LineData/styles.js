@@ -7,7 +7,7 @@ export const Container = styled.div`
 
 	strong {
 		font-size: 14px;
-		color: #009688;
+		color: #006fff;
 	}
 
 	small {
@@ -43,7 +43,7 @@ export const Line = styled.div`
 		left: 0;
 		border-radius: 4px;
 		content: '';
-		background-color: #4ede4e;
+		background-color: #3ca900;
 		width: ${props => props.value}px;
 	}
 `;

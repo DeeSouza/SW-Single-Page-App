@@ -7,6 +7,7 @@ export default function Loading() {
 	return (
 		<Container>
 			<img src={logo} alt="Loading" />
+			<div>You don’t know the power of the dark side.</div>
 		</Container>
 	);
 }

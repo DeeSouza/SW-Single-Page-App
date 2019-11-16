@@ -1,6 +1,29 @@
 import styled from 'styled-components';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+	.no-records {
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+
+		img {
+			width: 40px;
+		}
+
+		small {
+			font-size: 16px;
+			margin-top: 10px;
+			font-weight: lighter;
+
+			@media screen and (min-width: 768px) {
+				font-size: 18px;
+			}
+		}
+	}
+`;
 
 export const Details = styled.div`
 	padding: 20px;
@@ -30,7 +53,7 @@ export const Details = styled.div`
 
 			strong {
 				font-size: 14px;
-				color: #009688;
+				color: #006fff;
 			}
 
 			small {

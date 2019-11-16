@@ -10,6 +10,7 @@ import Error from '../../components/Error';
 
 import { Container, Details, Starships, WrapperStarships } from './styles';
 import SWApi from '../../services/api';
+import nothing from '../../assets/c3po-star-wars.svg';
 
 export default function DetailPeople({ location }) {
 	const { people } = location.state;
@@ -90,12 +91,23 @@ export default function DetailPeople({ location }) {
 					<Error />
 				) : (
 					<Starships>
-						{starships.map(ship => (
-							<Starship key={ship.created} item={ship} />
-						))}
+						{starships.length > 0 &&
+							starships.map(ship => (
+								<Starship key={ship.created} item={ship} />
+							))}
 					</Starships>
 				)}
 			</WrapperStarships>
+
+			{!starships.length > 0 && !error && (
+				<div className="no-records">
+					<img src={nothing} alt="Nothing" />
+					<small>
+						<strong>No records found.</strong> R2D2! You know better
+						than to trust a strange computer!
+					</small>
+				</div>
+			)}
 		</Container>
 	);
 }
