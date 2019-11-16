@@ -15,6 +15,16 @@ export const Details = styled.div`
 		color: #5f5f5f;
 		margin-top: 5px;
 	}
+
+	@media screen and (min-width: 768px) {
+		h1 {
+			font-size: 22px;
+		}
+
+		h3 {
+			font-size: 18px;
+		}
+	}
 `;
 
 export const WrapperStarships = styled.div`
