@@ -6,6 +6,10 @@
 
 Esta é uma Single Page Application feita em React para mostrar dados da Saga Star Wars de personagens e suas respectivas naves das quais são pilotos, caso tenha.
 
+**Observação:** Não foi possível utilizar a API do Google Custom Search Engine, então utilizei a API da Picsum Photos. Embora não tenha relação nenhuma as imagens apresentadas com os nomes dos personagens ou naves, preferi ter as imagens do que não ter nenhuma, para dar a ideia de como ficaria as imagens na aplicação.
+
+Em breve, tentarei novamente consumir a API do Google ou outra API que permita fazer buscas personalizadas.
+
 Para executar o site, siga os passos abaixo.
 
 ## REQUIREMENTS
