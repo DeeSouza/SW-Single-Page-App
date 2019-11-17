@@ -13,6 +13,8 @@ O MENU da esquerda, funciona apenas para a página inicial, visto ainda não ter
 
 Para executar o site, siga os passos abaixo ou acesse o LIVE:
 
+http://invillia-sw.surge.sh
+
 ## REQUIREMENTS
 
 | Library | Version |
@@ -48,26 +50,26 @@ yarn build
 
 ## What I Used
 
-- React JS
-- React Hooks
-- Styled Components
-- React Icons
-- React Toastify
-- Axios
-- Polished
-- Picsum Photos
-- Prop Types
-- React Perfect Scrollbar
+-   React JS
+-   React Hooks
+-   Styled Components
+-   React Icons
+-   React Toastify
+-   Axios
+-   Polished
+-   Picsum Photos
+-   Prop Types
+-   React Perfect Scrollbar
 
 ## My Setup Dev
 
-- ESLint
-- Prettier
-- Editor Config
+-   ESLint
+-   Prettier
+-   Editor Config
 
 ## Tests
 
-- Não foram desenvolvidos testes nessa aplicação ainda
+-   Não foram desenvolvidos testes nessa aplicação ainda
 
 ## API Star Wars
 

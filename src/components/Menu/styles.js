@@ -22,6 +22,8 @@ export const Container = styled.div`
 				background-color: ${lighten(0.1, settings.lightsaber.red)};
 				top: 4px;
 				transform: rotate(45deg);
+				transition: transform 0.15s ease-out 1.95s,
+					box-shadow 0.15s ease-out, top 0.15s ease-out 0.95s;
 			}
 
 			&.green {
@@ -35,6 +37,8 @@ export const Container = styled.div`
 				background-color: ${lighten(0.1, settings.lightsaber.blue)};
 				top: -4px;
 				transform: rotate(135deg);
+				transition: transform 0.15s ease-out 1.95s,
+					box-shadow 0.15s ease-out, top 0.15s ease-out 0.95s;
 			}
 		}
 	}
@@ -61,7 +65,6 @@ export const Container = styled.div`
 			background-color: ${settings.lightsaber.red};
 			box-shadow: ${settings.lightsaber.red} 0px 0px 0px 0px;
 			transform: rotate(0deg);
-			transition: all 0.15s ease-out 0.95s;
 
 			&:before {
 				background-color: #000;
@@ -75,7 +78,7 @@ export const Container = styled.div`
 			background-color: ${settings.lightsaber.green};
 			box-shadow: ${settings.lightsaber.green} 0px 0px 0px 0px;
 
-			transition: all 0.95s ease-out 0.15s;
+			transition: right 0.95s ease-out 0.35s, box-shadow 0.95s ease-out;
 			right: 0px;
 
 			&:before {
@@ -91,7 +94,6 @@ export const Container = styled.div`
 			background-color: ${settings.lightsaber.blue};
 			box-shadow: ${settings.lightsaber.blue} 0px 0px 0px 0px;
 			transform: rotate(0deg);
-			transition: all 0.15s ease-out 0.95s;
 
 			&:before {
 				background-color: #000;
