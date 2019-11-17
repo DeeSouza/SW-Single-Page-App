@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import 'react-perfect-scrollbar/dist/css/styles.css';
 
 export const Container = styled.div`
 	position: fixed;

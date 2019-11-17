@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PerfectScrollbar from 'react-perfect-scrollbar';
 import { FaPlus, FaSpinner } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 
@@ -42,7 +43,7 @@ export default function Home() {
 				setLoadingMore(false);
 			}
 		})();
-	}, [page]);
+	}, [page]); // eslint-disable-line
 
 	function handleMorePeople() {
 		if (next) {
@@ -61,28 +62,30 @@ export default function Home() {
 					<Error />
 				) : (
 					<Peoples>
-						{peoples.map(people => (
-							<People key={people.created} item={people} />
-						))}
+						<PerfectScrollbar useBothWheelAxes>
+							{peoples.map(people => (
+								<People key={people.created} item={people} />
+							))}
 
-						{next && (
-							<LoadMore>
-								<button
-									type="button"
-									onClick={handleMorePeople}
-								>
-									{loadingMore ? (
-										<FaSpinner
-											className="loading"
-											color="#FFFFFF"
-											size={16}
-										/>
-									) : (
-										<FaPlus color="#FFFFFF" size={16} />
-									)}
-								</button>
-							</LoadMore>
-						)}
+							{next && (
+								<LoadMore>
+									<button
+										type="button"
+										onClick={handleMorePeople}
+									>
+										{loadingMore ? (
+											<FaSpinner
+												className="loading"
+												color="#FFFFFF"
+												size={16}
+											/>
+										) : (
+											<FaPlus color="#FFFFFF" size={16} />
+										)}
+									</button>
+								</LoadMore>
+							)}
+						</PerfectScrollbar>
 					</Peoples>
 				)}
 			</WrapperPeoples>

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import 'react-perfect-scrollbar/dist/css/styles.css';
 
 export const Container = styled.div`
 	h2 {
@@ -22,7 +23,13 @@ export const Peoples = styled.div`
 	width: 100%;
 	display: flex;
 	overflow: auto;
-	padding: 0px 0px 10px;
+	padding: 0px;
+
+	.scrollbar-container {
+		padding-bottom: 30px;
+		display: flex;
+		width: 100%;
+	}
 `;
 
 export const LoadMore = styled.div`
