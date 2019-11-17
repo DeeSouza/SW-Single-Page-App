@@ -3,7 +3,6 @@ import { lighten } from 'polished';
 import settings from '../../styles/variables';
 
 export const Container = styled.div`
-	border-radius: 50%;
 	width: 35px;
 	height: 35px;
 	display: flex;
@@ -12,22 +11,30 @@ export const Container = styled.div`
 	flex-direction: column;
 	border: none;
 	cursor: pointer;
+	overflow: hidden;
+	padding: 10px 10px;
+	box-sizing: content-box;
 
 	&:hover {
 		.lightsaber {
 			&.red {
 				box-shadow: ${settings.lightsaber.red} 0px 0px 10px 2px;
 				background-color: ${lighten(0.1, settings.lightsaber.red)};
+				top: 4px;
+				transform: rotate(45deg);
 			}
 
 			&.green {
 				box-shadow: ${settings.lightsaber.green} 0px 0px 10px 2px;
 				background-color: ${lighten(0.1, settings.lightsaber.green)};
+				right: -200px;
 			}
 
 			&.blue {
 				box-shadow: ${settings.lightsaber.blue} 0px 0px 10px 2px;
 				background-color: ${lighten(0.1, settings.lightsaber.blue)};
+				top: -4px;
+				transform: rotate(135deg);
 			}
 		}
 	}
@@ -53,6 +60,8 @@ export const Container = styled.div`
 			align-self: flex-start;
 			background-color: ${settings.lightsaber.red};
 			box-shadow: ${settings.lightsaber.red} 0px 0px 0px 0px;
+			transform: rotate(0deg);
+			transition: all 0.15s ease-out 0.95s;
 
 			&:before {
 				background-color: #000;
@@ -66,6 +75,9 @@ export const Container = styled.div`
 			background-color: ${settings.lightsaber.green};
 			box-shadow: ${settings.lightsaber.green} 0px 0px 0px 0px;
 
+			transition: all 0.95s ease-out 0.15s;
+			right: 0px;
+
 			&:before {
 				background-color: #000;
 				left: -50%;
@@ -78,6 +90,8 @@ export const Container = styled.div`
 			align-self: flex-start;
 			background-color: ${settings.lightsaber.blue};
 			box-shadow: ${settings.lightsaber.blue} 0px 0px 0px 0px;
+			transform: rotate(0deg);
+			transition: all 0.15s ease-out 0.95s;
 
 			&:before {
 				background-color: #000;
