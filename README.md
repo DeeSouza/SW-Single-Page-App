@@ -48,22 +48,26 @@ yarn build
 
 ## What I Used
 
--   React JS
--   React Hooks
--   Styled Components
--   React Icons
--   React Toastify
--   Axios
--   Polished
--   Picsum Photos
--   Prop Types
--   React Perfect Scrollbar
+- React JS
+- React Hooks
+- Styled Components
+- React Icons
+- React Toastify
+- Axios
+- Polished
+- Picsum Photos
+- Prop Types
+- React Perfect Scrollbar
 
 ## My Setup Dev
 
--   ESLint
--   Prettier
--   Editor Config
+- ESLint
+- Prettier
+- Editor Config
+
+## Tests
+
+- Não foram desenvolvidos testes nessa aplicação ainda
 
 ## API Star Wars
 
