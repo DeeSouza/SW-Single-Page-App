@@ -77,10 +77,16 @@ export default function DetailStarship({ show, starship, onClose }) {
 	);
 }
 
+DetailStarship.defaultProps = {
+	starship: {},
+};
+
 DetailStarship.propTypes = {
 	onClose: PropTypes.func.isRequired,
 	show: PropTypes.bool.isRequired,
-	starship: PropTypes.arrayOf({
+	starship: PropTypes.shape({
+		name: PropTypes.string,
+		model: PropTypes.string,
 		cost_in_credits: PropTypes.string,
 		hyperdrive_rating: PropTypes.string,
 		max_atmosphering_speed: PropTypes.string,
@@ -93,8 +99,4 @@ DetailStarship.propTypes = {
 		cargo_capacity: PropTypes.string,
 		manufacturer: PropTypes.string,
 	}),
-};
-
-DetailStarship.defaultProps = {
-	starship: [],
 };

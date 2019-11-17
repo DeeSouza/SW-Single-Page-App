@@ -16,7 +16,7 @@ import nothing from '../../assets/c3po-star-wars.svg';
 export default function DetailPeople({ location }) {
 	const { people } = location.state;
 	const [starships, setStarships] = useState([]);
-	const [starship, setStarship] = useState([]);
+	const [starship, setStarship] = useState({});
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(false);
 	const [show, setShow] = useState(false);
@@ -43,7 +43,7 @@ export default function DetailPeople({ location }) {
 				setLoading(false);
 			}
 		})();
-	}, []);
+	}, []); // eslint-disable-line
 
 	function handleDetailStarship(ship) {
 		setShow(true);
