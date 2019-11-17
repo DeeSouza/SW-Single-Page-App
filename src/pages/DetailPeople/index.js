@@ -50,10 +50,18 @@ export default function DetailPeople({ location }) {
 		setStarship(ship);
 	}
 
+	function handleCloseDetail() {
+		setShow(false);
+	}
+
 	return (
 		<Container>
 			<HeaderDetail />
-			<DetailStarship show={show} starship={starship} />
+			<DetailStarship
+				onClose={handleCloseDetail}
+				show={show}
+				starship={starship}
+			/>
 
 			<Details>
 				<h1>{people.name}</h1>
@@ -112,7 +120,7 @@ export default function DetailPeople({ location }) {
 				)}
 			</WrapperStarships>
 
-			{!starships.length > 0 && !error && (
+			{!starships.length > 0 && !error && !loading && (
 				<div className="no-records">
 					<img src={nothing} alt="Nothing" />
 					<small>

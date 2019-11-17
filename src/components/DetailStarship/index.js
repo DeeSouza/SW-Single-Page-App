@@ -1,10 +1,19 @@
 import React from 'react';
+import { FaTimes } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import { Container } from './styles';
 
-export default function DetailStarship({ show, starship }) {
+export default function DetailStarship({ show, starship, onClose }) {
 	return (
 		<Container show={show}>
+			<div className="header">
+				<button type="button" onClick={onClose}>
+					<FaTimes color="#ff2727" size={25} />
+				</button>
+				<strong className="name">{starship.name}</strong>
+				<small className="model">{starship.model}</small>
+			</div>
+
 			<div className="info">
 				<div>
 					<strong>Manufacturer</strong>
@@ -66,6 +75,23 @@ export default function DetailStarship({ show, starship }) {
 }
 
 DetailStarship.propTypes = {
+	onClose: PropTypes.func.isRequired,
 	show: PropTypes.bool.isRequired,
-	starship: PropTypes.shape({}),
+	starship: PropTypes.arrayOf({
+		cost_in_credits: PropTypes.string,
+		hyperdrive_rating: PropTypes.string,
+		max_atmosphering_speed: PropTypes.string,
+		consumables: PropTypes.string,
+		passengers: PropTypes.string,
+		MGLT: PropTypes.string,
+		crew: PropTypes.string,
+		starship_class: PropTypes.string,
+		length: PropTypes.string,
+		cargo_capacity: PropTypes.string,
+		manufacturer: PropTypes.string,
+	}),
+};
+
+DetailStarship.defaultProps = {
+	starship: [],
 };

@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
 	position: fixed;
+	overflow: auto;
 	z-index: 1;
 	top: 0px;
 	right: 0;
@@ -10,10 +11,31 @@ export const Container = styled.div`
 	width: 100%;
 	max-width: 320px;
 	transform: ${props => (props.show ? 'translateX(0%)' : 'translateX(100%)')};
+	box-shadow: ${props => (props.show ? '#252424 0px 0px 12px -4px' : 'none')};
+	padding: 20px;
+	transition: all 0.45s ease-out;
+
+	.header {
+		strong {
+			display: block;
+			color: #006fff;
+			font-size: 17px;
+		}
+
+		small {
+			font-weight: 400;
+			font-size: 15px;
+		}
+
+		button {
+			margin-bottom: 20px;
+			cursor: pointer;
+			background-color: transparent;
+			border: none;
+		}
+	}
 
 	.info {
-		padding: 20px;
-
 		div {
 			display: flex;
 			flex-direction: column;
