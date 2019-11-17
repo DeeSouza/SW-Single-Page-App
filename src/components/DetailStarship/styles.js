@@ -28,7 +28,8 @@ export const Container = styled.div`
 		}
 
 		button {
-			margin-bottom: 20px;
+			margin: 0px auto 20px auto;
+			display: block;
 			cursor: pointer;
 			background-color: transparent;
 			border: none;
