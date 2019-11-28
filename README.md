@@ -11,7 +11,7 @@ O MENU da esquerda, funciona apenas para a página inicial visto ainda não ter 
 
 Para executar o site, siga os passos abaixo ou acesse o LIVE:
 
-http://invillia-sw.surge.sh
+http://sw-spa.surge.sh
 
 ## REQUIREMENTS
 
