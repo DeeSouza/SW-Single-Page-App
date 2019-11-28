@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { FaPlaceOfWorship } from 'react-icons/fa';
 import { Container, ImageCover } from './styles';
 
 export default function Starship({ item, onClick }) {
+	const id = useMemo(() => item.url.match(/\d+/g)[0], [item.url]);
+
 	return (
 		<Container>
 			<ImageCover
-				image={`https://picsum.photos/300/150?random=${item.created}`}
+				image={`https://starwars-visualguide.com/assets/img/starships/${id}.jpg`}
 			>
 				<div className="info">
 					<strong>
@@ -31,6 +33,7 @@ Starship.propTypes = {
 		name: PropTypes.string,
 		model: PropTypes.string,
 		created: PropTypes.string,
+		url: PropTypes.string,
 	}).isRequired,
 	onClick: PropTypes.func.isRequired,
 };

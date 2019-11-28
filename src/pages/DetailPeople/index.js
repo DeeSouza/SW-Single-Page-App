@@ -56,7 +56,7 @@ export default function DetailPeople({ location }) {
 
 	return (
 		<Container>
-			<HeaderDetail />
+			<HeaderDetail item={people} />
 			<DetailStarship
 				onClose={handleCloseDetail}
 				show={show}

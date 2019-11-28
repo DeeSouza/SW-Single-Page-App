@@ -11,8 +11,9 @@ export const Container = styled.div`
 `;
 
 export const ImageCover = styled.div`
-	height: 150px;
+	height: 250px;
 	background-size: cover;
+	background-position: center center;
 	background-image: linear-gradient(
 			to bottom,
 			rgba(255, 255, 255, 0.3),
@@ -38,7 +39,6 @@ export const ImageCover = styled.div`
 		.more-info {
 			bottom: 20px;
 			opacity: 1;
-			/* transition-delay: 0.75s; */
 		}
 	}
 

@@ -8,18 +8,21 @@ export const Container = styled.div`
 	align-items: center;
 	padding: 0px 15px;
 	justify-content: space-between;
-	background-image: url(https://picsum.photos/300/150?grayscale);
+	background-image: ${props =>
+		`url(https://starwars-visualguide.com/assets/img/characters/${props.id}.jpg)`};
 	background-size: cover;
 	background-position: center center;
 
 	@media screen and (min-width: 768px) {
 		height: 250px;
-		background-image: url(https://picsum.photos/768/250?grayscale);
+		background-image: ${props =>
+			`url(https://starwars-visualguide.com/assets/img/characters/${props.id}.jpg)`};
 	}
 
 	@media screen and (min-width: 1024px) {
 		height: 350px;
-		background-image: url(https://picsum.photos/1024/350?grayscale);
+		background-image: ${props =>
+			`url(https://starwars-visualguide.com/assets/img/characters/${props.id}.jpg)`};
 	}
 
 	img {

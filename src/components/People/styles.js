@@ -63,18 +63,19 @@ export const Container = styled.div`
 `;
 
 export const ImageCover = styled.div`
-	height: 150px;
-	background-size: 100% 100%;
-	background-position: center center;
+	height: 250px;
+	background-size: cover;
+	background-position: top center;
 	background-repeat: no-repeat;
 	background-image: url(${props => props.image});
 	overflow: hidden;
 	border-top-left-radius: 5px;
 	border-top-right-radius: 5px;
 	transition: all 0.25s ease-out;
+	transform: scale(1);
 
 	&:hover {
-		background-size: 110% 110%;
+		transform: scale(1.03);
 	}
 `;
 

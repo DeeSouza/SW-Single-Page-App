@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { FaArrowRight } from 'react-icons/fa';
@@ -6,10 +6,12 @@ import { FaArrowRight } from 'react-icons/fa';
 import { Container, ImageCover, GoDetail } from './styles';
 
 export default function People({ item }) {
+	const id = useMemo(() => item.url.match(/\d+/g)[0], [item.url]);
+
 	return (
 		<Container>
 			<ImageCover
-				image={`https://picsum.photos/300/150?grayscale&random=${item.created}`}
+				image={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`}
 			/>
 
 			<div className="main">
@@ -47,5 +49,6 @@ People.propTypes = {
 		eye_color: PropTypes.string,
 		created: PropTypes.string,
 		birth_year: PropTypes.string,
+		url: PropTypes.string,
 	}).isRequired,
 };
