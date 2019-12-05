@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const Container = styled.div`
 	.no-records {
@@ -26,64 +27,47 @@ export const Container = styled.div`
 	}
 `;
 
+export const Info = styled(motion.div).attrs({
+	animate: {
+		scale: [0.5, 1],
+		opacity: [0, 1],
+		transition: {
+			delay: [1, 2],
+		},
+	},
+})`
+	display: flex;
+	flex-direction: column;
+	border-radius: 5px;
+	background-color: #fff;
+	height: 100px;
+	width: 100px;
+	justify-content: center;
+	align-items: center;
+	margin: 10px 0px;
+
+	strong {
+		font-size: 14px;
+		color: #006fff;
+	}
+
+	small {
+		font-size: 12px;
+		font-weight: lighter;
+	}
+`;
+
 export const Details = styled.div`
 	padding: 20px;
-
-	h1 {
-		font-size: 18px;
-		color: #000;
-	}
-
-	h3 {
-		font-size: 15px;
-		color: #5f5f5f;
-		margin-top: 5px;
-	}
+	margin: auto;
+	margin-top: 40px;
 
 	.details {
-		display: flex;
-		flex-direction: row;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, 100px);
+		grid-column-gap: 20px;
 		justify-content: space-between;
-		align-items: center;
-		margin-top: 20px;
-		max-width: 600px;
-
-		div {
-			display: flex;
-			flex-direction: column;
-
-			strong {
-				font-size: 14px;
-				color: #006fff;
-			}
-
-			small {
-				font-size: 12px;
-				font-weight: lighter;
-			}
-		}
-	}
-
-	@media screen and (min-width: 768px) {
-		h1 {
-			font-size: 22px;
-		}
-
-		h3 {
-			font-size: 18px;
-		}
-
-		.details {
-			div {
-				strong {
-					font-size: 18px;
-				}
-
-				small {
-					font-size: 15px;
-				}
-			}
-		}
+		max-width: 720px;
 	}
 `;
 

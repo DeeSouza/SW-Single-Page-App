@@ -5,11 +5,16 @@ import axios from 'axios';
 import HeaderDetail from '../../components/HeaderDetail';
 import Starship from '../../components/Starship';
 import DetailStarship from '../../components/DetailStarship';
-import LineData from '../../components/LineData';
 import Loading from '../../components/Loading';
 import Error from '../../components/Error';
 
-import { Container, Details, Starships, WrapperStarships } from './styles';
+import {
+	Container,
+	Details,
+	Starships,
+	WrapperStarships,
+	Info,
+} from './styles';
 import SWApi from '../../services/api';
 import nothing from '../../assets/c3po-star-wars.svg';
 
@@ -57,6 +62,7 @@ export default function DetailPeople({ location }) {
 	return (
 		<Container>
 			<HeaderDetail item={people} />
+
 			<DetailStarship
 				onClose={handleCloseDetail}
 				show={show}
@@ -64,38 +70,27 @@ export default function DetailPeople({ location }) {
 			/>
 
 			<Details>
-				<h1>{people.name}</h1>
-				<h3>{people.birth_year}</h3>
-
 				<div className="details">
-					<div>
+					<Info>
 						<strong>Hair Color</strong>
 						<small>{people.hair_color}</small>
-					</div>
-					<div>
+					</Info>
+					<Info>
 						<strong>Skin Color</strong>
 						<small>{people.skin_color}</small>
-					</div>
-					<div>
+					</Info>
+					<Info>
 						<strong>Eyes Color</strong>
 						<small>{people.eye_color}</small>
-					</div>
-				</div>
-
-				<div className="other-details">
-					{people.height && (
-						<LineData item={people.height}>
-							<strong>Height</strong>
-							<small>{people.height}</small>
-						</LineData>
-					)}
-
-					{people.mass && (
-						<LineData item={people.mass}>
-							<strong>Mass</strong>
-							<small>{people.mass}</small>
-						</LineData>
-					)}
+					</Info>
+					<Info>
+						<strong>Height</strong>
+						<small>{people.height}</small>
+					</Info>
+					<Info>
+						<strong>Mass</strong>
+						<small>{people.mass}</small>
+					</Info>
 				</div>
 			</Details>
 
@@ -137,8 +132,6 @@ DetailPeople.propTypes = {
 	location: PropTypes.shape({
 		state: PropTypes.shape({
 			people: PropTypes.shape({
-				name: PropTypes.string,
-				birth_year: PropTypes.string,
 				hair_color: PropTypes.string,
 				skin_color: PropTypes.string,
 				eye_color: PropTypes.string,
