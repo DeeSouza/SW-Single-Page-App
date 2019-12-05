@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
@@ -14,6 +14,8 @@ import {
 	Starships,
 	WrapperStarships,
 	Info,
+	Profile,
+	ProfileImage,
 } from './styles';
 import SWApi from '../../services/api';
 import nothing from '../../assets/c3po-star-wars.svg';
@@ -26,6 +28,8 @@ export default function DetailPeople({ location }) {
 	const [error, setError] = useState(false);
 	const [show, setShow] = useState(false);
 	const all_starships = [];
+
+	const id = useMemo(() => people.url.match(/\d+/g)[0], []); // eslint-disable-line
 
 	useEffect(() => {
 		(async function getSWStarshipPeople() {
@@ -70,26 +74,35 @@ export default function DetailPeople({ location }) {
 			/>
 
 			<Details>
+				<Profile>
+					<ProfileImage personid={id} />
+
+					<div className="info">
+						<h1>{people.name}</h1>
+						<h3>{people.birth_year}</h3>
+					</div>
+				</Profile>
+
 				<div className="details">
 					<Info>
-						<strong>Hair Color</strong>
 						<small>{people.hair_color}</small>
+						<strong>Hair Color</strong>
 					</Info>
 					<Info>
-						<strong>Skin Color</strong>
 						<small>{people.skin_color}</small>
+						<strong>Skin Color</strong>
 					</Info>
 					<Info>
-						<strong>Eyes Color</strong>
 						<small>{people.eye_color}</small>
+						<strong>Eyes Color</strong>
 					</Info>
 					<Info>
-						<strong>Height</strong>
 						<small>{people.height}</small>
+						<strong>Height</strong>
 					</Info>
 					<Info>
-						<strong>Mass</strong>
 						<small>{people.mass}</small>
+						<strong>Mass</strong>
 					</Info>
 				</div>
 			</Details>
@@ -132,12 +145,15 @@ DetailPeople.propTypes = {
 	location: PropTypes.shape({
 		state: PropTypes.shape({
 			people: PropTypes.shape({
+				name: PropTypes.string,
+				birth_year: PropTypes.string,
 				hair_color: PropTypes.string,
 				skin_color: PropTypes.string,
 				eye_color: PropTypes.string,
 				mass: PropTypes.string,
 				height: PropTypes.string,
 				starships: PropTypes.array,
+				url: PropTypes.string,
 			}),
 		}),
 	}).isRequired,

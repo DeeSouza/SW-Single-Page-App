@@ -36,15 +36,24 @@ export const Info = styled(motion.div).attrs({
 		},
 	},
 })`
-	display: flex;
+	display: inline-flex;
 	flex-direction: column;
-	border-radius: 5px;
+	border-radius: 25px;
 	background-color: #fff;
 	height: 100px;
-	width: 100px;
+	min-width: 100px;
 	justify-content: center;
 	align-items: center;
-	margin: 10px 0px;
+	margin: 10px;
+	box-shadow: rgba(0, 0, 0, 0.28) 0px 0px 14px -2px;
+
+	&:first-child {
+		margin-left: 0;
+	}
+
+	&:last-child {
+		margin-right: 10px;
+	}
 
 	strong {
 		font-size: 14px;
@@ -60,14 +69,19 @@ export const Info = styled(motion.div).attrs({
 export const Details = styled.div`
 	padding: 20px;
 	margin: auto;
-	margin-top: 40px;
+	margin-top: 0;
+	background-color: #fff;
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
+	position: relative;
+	top: -50px;
 
 	.details {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, 100px);
-		grid-column-gap: 20px;
-		justify-content: space-between;
-		max-width: 720px;
+		margin-top: -60px;
+		width: 100%;
+		overflow: auto;
+		padding: 0px 20px 5px;
+		white-space: nowrap;
 	}
 `;
 
@@ -95,4 +109,41 @@ export const Starships = styled.div`
 		grid-template-columns: 1fr 1fr;
 		grid-gap: 20px;
 	}
+`;
+
+export const Profile = styled.div`
+	padding: 20px;
+	position: relative;
+	bottom: 70px;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+	justify-content: flex-start;
+
+	.info {
+		margin-left: 10px;
+
+		h1 {
+			font-size: 18px;
+			color: #000;
+		}
+
+		h3 {
+			font-size: 15px;
+			color: #5f5f5f;
+			margin-top: 0px;
+		}
+	}
+`;
+
+export const ProfileImage = styled.div`
+	background-image: ${props =>
+		`url(https://starwars-visualguide.com/assets/img/characters/${props.personid}.jpg)`};
+	width: 100px;
+	height: 100px;
+	border-radius: 30px;
+	background-size: cover;
+	background-position: center center;
+	border: 5px solid #fff;
 `;
