@@ -56,13 +56,14 @@ export const Info = styled(motion.div).attrs({
 	}
 
 	strong {
-		font-size: 14px;
+		font-size: 13px;
 		color: #006fff;
 	}
 
 	small {
-		font-size: 12px;
+		font-size: 14px;
 		font-weight: lighter;
+		color: #616161;
 	}
 `;
 
@@ -90,7 +91,7 @@ export const WrapperStarships = styled.div`
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	padding: 20px;
+	padding: 0px 20px 20px;
 
 	h2 {
 		margin-right: auto;
@@ -121,6 +122,10 @@ export const Profile = styled.div`
 	align-items: flex-end;
 	justify-content: flex-start;
 
+	@media screen and (min-width: 768px) {
+		bottom: 100px;
+	}
+
 	.info {
 		margin-left: 10px;
 
@@ -146,4 +151,9 @@ export const ProfileImage = styled.div`
 	background-size: cover;
 	background-position: center center;
 	border: 5px solid #fff;
+
+	@media screen and (min-width: 768px) {
+		width: 150px;
+		height: 150px;
+	}
 `;
